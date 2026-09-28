@@ -54,11 +54,10 @@ export async function setupVite(app: Express, server: Server) {
 }
 
 export function serveStatic(app: Express) {
-  // Vercel/production build output is located at:
-  // dist/public
+  // Production build output:
+  // <project-root>/dist/public
   const distPath = path.resolve(
-    import.meta.dirname,
-    "../..",
+    process.cwd(),
     "dist",
     "public"
   );
